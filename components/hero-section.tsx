@@ -9,9 +9,11 @@ import { Button } from '@/components/ui/button';
 const HERO_VIDEO_MP4 = 'https://ik.imagekit.io/l1mhaygkv/Caddy%20Cruise%20Hero%20Video.mp4/ik-video.mp4?updatedAt=1755624198810';
 
 export default function HeroSection() {
-  const handleBookTour = () => {
-    window.open(BOOKING_URL, '_blank', 'noopener,noreferrer');
-  };
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+  const containerRef = useRef<HTMLElement | null>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [videoLoaded, setVideoLoaded] = useState(false);
+  const pathname = usePathname();
 
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const containerRef = useRef<HTMLElement | null>(null);
