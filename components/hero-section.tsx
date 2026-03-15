@@ -15,12 +15,6 @@ export default function HeroSection() {
   const [videoLoaded, setVideoLoaded] = useState(false);
   const pathname = usePathname();
 
-  const videoRef = useRef<HTMLVideoElement | null>(null);
-  const containerRef = useRef<HTMLElement | null>(null);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [videoLoaded, setVideoLoaded] = useState(false);
-  const pathname = usePathname();
-
   // Preconnect to the video/image CDN for faster first-byte
   useEffect(() => {
     const makeLink = (rel: string) => {
