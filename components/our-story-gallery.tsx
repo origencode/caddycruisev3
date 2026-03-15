@@ -45,11 +45,7 @@ export default function OurStoryGallery() {
   ];
 
   const handleBookTour = () => {
-    const tourSection = document.querySelector('[data-tour-section]');
-    if (tourSection) {
-      const event = new CustomEvent('openCruiseSelection');
-      tourSection.dispatchEvent(event);
-    }
+    window.dispatchEvent(new Event('openCruiseSelection'));
   };
 
   return (

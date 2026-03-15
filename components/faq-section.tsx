@@ -9,11 +9,7 @@ export default function FAQSection() {
   const [openItems, setOpenItems] = useState<number[]>([]);
 
   const handleBookTour = () => {
-    const tourSection = document.querySelector('[data-tour-section]');
-    if (tourSection) {
-      const event = new CustomEvent('openCruiseSelection');
-      tourSection.dispatchEvent(event);
-    }
+    window.dispatchEvent(new Event('openCruiseSelection'));
   };
 
   const toggleItem = (index: number) => {
@@ -104,23 +100,25 @@ export default function FAQSection() {
           <p className="text-brand-teal mb-6 text-lg">
             Still have questions? We&rsquo;re here to help!
           </p>
-          <div className="mb-4">
-            <Button onClick={handleBookTour} size="lg">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Button
+              onClick={handleBookTour}
+              size="lg"
+              className="w-full sm:w-56 bg-brand-teal text-white hover:bg-brand-teal/90 rounded-xl"
+            >
               Book a Tour
             </Button>
-          </div>
-          <Button
-            asChild
-            variant="outline"
-            size="lg"
-            className="mb-4 border-2 border-white bg-transparent text-white hover:bg-white hover:text-brand-teal"
-          >
-            <a
-            href="tel:+19417777465"
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              className="w-full sm:w-56 border-2 border-brand-teal bg-transparent text-brand-teal hover:bg-brand-teal hover:text-white rounded-xl"
             >
-              Call (941) 777-7465
-            </a>
-          </Button>
+              <a href="tel:+19417777465">
+                Call (941) 777-7465
+              </a>
+            </Button>
+          </div>
         </div>
       </div>
     </section>

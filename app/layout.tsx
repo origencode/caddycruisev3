@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google';
 import Script from 'next/script';
 import { BOOKING_URL } from '@/lib/constants';
 import { LOGO_URL } from '@/lib/constants';
+import CruiseSelectionModal from '@/components/cruise-selection-modal';
 
 // Preload lists for CDN media
 const HERO_VIDEO_MP4 = 'https://ik.imagekit.io/l1mhaygkv/Caddy%20Cruise%20Hero%20Video.mp4/ik-video.mp4?updatedAt=1755624198810';
@@ -96,6 +97,7 @@ export default function RootLayout({
           Skip to content
         </a>
         {children}
+        <CruiseSelectionModal />
       </body>
     </html>
   );

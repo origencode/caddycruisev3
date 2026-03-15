@@ -6,11 +6,7 @@ import { Calendar, Clock, Wine } from 'lucide-react';
 export default function BookingSection() {
 
   const handleBookTour = () => {
-    const tourSection = document.querySelector('[data-tour-section]');
-    if (tourSection) {
-      const event = new CustomEvent('openCruiseSelection');
-      tourSection.dispatchEvent(event);
-    }
+    window.dispatchEvent(new Event('openCruiseSelection'));
   };
 
   const steps = [

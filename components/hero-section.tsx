@@ -192,12 +192,7 @@ export default function HeroSection() {
           <div className="animate-fade-in">
             <Button 
               onClick={() => {
-                // Find and trigger the cruise selection modal
-                const tourSection = document.querySelector('[data-tour-section]');
-                if (tourSection) {
-                  const event = new CustomEvent('openCruiseSelection');
-                  tourSection.dispatchEvent(event);
-                }
+                window.dispatchEvent(new Event('openCruiseSelection'));
               }} 
               size="lg" 
               className="text-lg px-12 py-4 shadow-lg shadow-black/20"

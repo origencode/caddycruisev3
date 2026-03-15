@@ -66,18 +66,14 @@ export default function Header() {
   };
 
   const handleBookTour = () => {
-    const tourSection = document.querySelector('[data-tour-section]');
-    if (tourSection) {
-      const event = new CustomEvent('openCruiseSelection');
-      tourSection.dispatchEvent(event);
-    }
+    window.dispatchEvent(new Event('openCruiseSelection'));
   };
 
   return (
     <header
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300 will-change-transform',
-        isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-transparent',
+        isMenuOpen ? 'bg-white shadow-lg' : isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-transparent',
         (isMenuOpen || isVisible) ? 'translate-y-0' : '-translate-y-full'
       )}
     >

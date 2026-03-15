@@ -17,11 +17,7 @@ const CancellationPolicyDialog = dynamic(() => import('@/components/cancellation
 
 export default function Footer() {
   const handleBookTour = () => {
-    const tourSection = document.querySelector('[data-tour-section]');
-    if (tourSection) {
-      const event = new CustomEvent('openCruiseSelection');
-      tourSection.dispatchEvent(event);
-    }
+    window.dispatchEvent(new Event('openCruiseSelection'));
   };
 
   const scrollToSection = (sectionId: string) => {
